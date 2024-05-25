@@ -1,5 +1,5 @@
 {
-  "recipes": [
+  "watches": [
     {
       "id": "1",
       "title": "Spaghetti Carbonara 2",
@@ -129,46 +129,16 @@
   ],
   "categories": [
     {
-      "title": "Italian",
+      "title": "Analog",
       "id": "2314"
     },
     {
-      "title": "Indian",
+      "title": "Digital",
       "id": "8569"
     },
     {
-      "title": "Japanese",
+      "title": "Smart Watch",
       "id": "5680"
-    },
-    {
-      "title": "Mexican",
-      "id": "e23f"
-    },
-    {
-      "title": "Thai",
-      "id": "970b"
-    },
-    {
-      "title": "British",
-      "id": "b069"
-    },
-    {
-      "title": "Middle Eastern",
-      "id": "b460"
-    },
-    {
-      "title": "French",
-      "id": "8c74"
-    },
-    {
-      "title": "Chinese",
-      "id": "c33b"
-    },
-    {
-      "title": "American",
-      "id": "d05a"
     }
   ]
 }
-
-

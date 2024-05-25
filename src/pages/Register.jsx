@@ -1,37 +1,16 @@
-import {
-  useAuthState,
-  useCreateUserWithEmailAndPassword,
-} from "react-firebase-hooks/auth";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { auth } from "../firebase/firebase.config";
-import { Link, useNavigate } from "react-router-dom";
-import GoogleLogin from "../components/Auth/GoogleLogin";
 
-import { useEffect } from "react";
+const Register = () => {
+  const [signInWithGoogle, , loading] = useSignInWithGoogle(auth);
 
-export default function Register() {
-  const [user, loading] = useAuthState(auth);
-  const navigate = useNavigate();
-  const [createUserWithEmailAndPassword] =
-    useCreateUserWithEmailAndPassword(auth);
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const email = form.email.value;
-    const password = form.password.value;
-    createUserWithEmailAndPassword(email, password);
-  };
-
-  let from = location.state?.from?.pathname || "/";
-
-  useEffect(() => {
-    if (user) {
-      navigate(from, { replace: true });
-    }
-  }, [user, loading, navigate, from]);
   return (
     <div className="hero min-h-screen bg-base-200">
-      <div className="hero-content grid grid-cols-2 w-full mx-auto">
+      <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Register now!</h1>
           <p className="py-6">
@@ -40,15 +19,14 @@ export default function Register() {
             a id nisi.
           </p>
         </div>
-        <div className=" card shadow-2xl bg-base-100 max-w-lg">
-          <form onSubmit={handleSubmit} className="card-body  ">
+        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <form className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
               <input
                 type="email"
-                name="email"
                 placeholder="email"
                 className="input input-bordered"
                 required
@@ -60,29 +38,41 @@ export default function Register() {
               </label>
               <input
                 type="password"
-                name="password"
                 placeholder="password"
                 className="input input-bordered"
                 required
               />
             </div>
-            <div className="form-control mt-2">
-              <button className="btn btn-primary">Login</button>
-              <p className="text-center">
-                Already have an account ?{" "}
-                <Link to={"/login"} className="text-orange-500">
-                  Login
-                </Link>
-              </p>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Confirm Password</span>
+              </label>
+              <input
+                type="password"
+                placeholder="password"
+                className="input input-bordered"
+                required
+              />
+              <label className="label">
+                <a href="#" className="label-text-alt link link-hover">
+                  Forgot password?
+                </a>
+              </label>
+            </div>
+            <div className="form-control mt-6">
+              <button className="btn btn-primary">Register</button>
             </div>
           </form>
-          <div className="  w-full ">
-            <div className="flex flex-col gap-2 mx-7 mb-7">
-              <GoogleLogin />
-            </div>
-          </div>
+          <button
+            onClick={() => signInWithGoogle()}
+            className="btn btn-primary"
+          >
+            Google
+          </button>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Register;
