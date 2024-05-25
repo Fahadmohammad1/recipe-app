@@ -2,129 +2,91 @@
   "watches": [
     {
       "id": "1",
-      "title": "Spaghetti Carbonara 2",
-      "price": 12.99,
-      "description": "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper.",
-      "image": "https://example.com/images/spaghetti-carbonara.jpg",
-      "category": "Thai"
+      "title": "EMPORIO ARMANI",
+      "price": 14450,
+      "description": "Discover new depths with the Emporio Armani Sea Explorer GMT Bezel Men's Watch. Combining elegant design and precise timekeeping, this luxury watch is perfect for the modern explorer. The iconic bezel adds a touch of sophistication to your wrist, while the GMT function allows you to keep track of time in multiple time zones. Add this timeless timepiece to your collection and elevate your style to new heights.",
+      "image": "https://purepng.com/public/uploads/large/purepng.com-wrist-band-watchclockbelltimealarmwristbandsilver-1421526465486kk9sm.png",
+      "category": "Luxury Watches"
     },
     {
       "id": "2",
-      "title": "Chicken Tikka Masala",
-      "price": 15.99,
-      "description": "Grilled chunks of chicken enveloped in a creamy, spiced tomato sauce.",
-      "image": "https://example.com/images/chicken-tikka-masala.jpg",
-      "category": "Indian"
+      "title": "TAG Heuer Carrera",
+      "price": 17900,
+      "description": "Elevate your timekeeping experience with the TAG Heuer Carrera Chronograph Men's Watch. Known for its precision and durability, this watch combines sportiness with a sleek design. The chronograph function and tachymeter scale are perfect for those who demand high performance. Make a bold statement with this extraordinary timepiece.",
+      "image": "https://purepng.com/public/uploads/large/purepng.com-wrist-band-watchclockbelltimealarmwristbandsilver-1421526465486kk9sm.png",
+      "category": "Sports Watches"
     },
     {
       "id": "3",
-      "title": "Sushi Platter",
-      "price": 24.99,
-      "description": "A variety of fresh sushi including nigiri, sashimi, and rolls.",
-      "image": "https://example.com/images/sushi-platter.jpg",
-      "category": "Japanese"
+      "title": "Rolex Submariner",
+      "price": 82500,
+      "description": "Dive into luxury with the Rolex Submariner Men's Watch. Renowned for its unparalleled performance and classic design, this timepiece is perfect for both underwater exploration and formal occasions. The robust stainless steel case and iconic Oyster bracelet ensure longevity and style. Own a piece of horological excellence.",
+      "image": "https://purepng.com/public/uploads/large/purepng.com-wrist-band-watchclockbelltimealarmwristbandsilver-1421526465486kk9sm.png",
+      "category": "Dive Watches"
     },
     {
       "id": "4",
-      "title": "Tacos al Pastor",
-      "price": 10.99,
-      "description": "Flavorful marinated pork served on small corn tortillas with pineapple and onions.",
-      "image": "https://example.com/images/tacos-al-pastor.jpg",
-      "category": "Mexican"
+      "title": "Omega Seamaster",
+      "price": 35000,
+      "description": "Experience the perfect blend of tradition and innovation with the Omega Seamaster Diver Men's Watch. This iconic timepiece is a favorite among divers and watch enthusiasts alike, featuring a helium-escape valve and impressive water resistance. Enhance your collection with this symbol of precision and style.",
+      "image": "https://purepng.com/public/uploads/large/purepng.com-wrist-band-watchclockbelltimealarmwristbandsilver-1421526465486kk9sm.png",
+      "category": "Professional Watches"
     },
     {
       "id": "5",
-      "title": "Pad Thai",
-      "price": 11.99,
-      "description": "A stir-fried rice noodle dish with shrimp, tofu, peanuts, and tamarind sauce.",
-      "image": "https://example.com/images/pad-thai.jpg",
-      "category": "Thai"
+      "title": "Breitling Navitimer",
+      "price": 26500,
+      "description": "Navigate the skies with the Breitling Navitimer Chronograph Men's Watch. Celebrated for its aviation-inspired design, this watch features a slide rule bezel and chronograph functionality, making it a favorite among pilots. Enjoy the perfect fusion of functionality and elegance on your wrist.",
+      "image": "https://purepng.com/public/uploads/large/purepng.com-wrist-band-watchclockbelltimealarmwristbandsilver-1421526465486kk9sm.png",
+      "category": "Aviation Watches"
     },
     {
       "id": "6",
-      "title": "Beef Wellington",
-      "price": 29.99,
-      "description": "Tender beef filet wrapped in puff pastry with duxelles and prosciutto.",
-      "image": "https://example.com/images/beef-wellington.jpg",
-      "category": "British"
+      "title": "Patek Philippe Nautilus",
+      "price": 100500,
+      "description": "Indulge in the epitome of luxury with the Patek Philippe Nautilus Men's Watch. Known for its unique porthole design and impeccable craftsmanship, this timepiece offers elegance and sophistication. The intricate dial and high-performance movement make it a must-have for discerning collectors.",
+      "image": "https://purepng.com/public/uploads/large/purepng.com-wrist-band-watchclockbelltimealarmwristbandsilver-1421526465486kk9sm.png",
+      "category": "Professional Watches"
     },
     {
       "id": "7",
-      "title": "Falafel Wrap",
-      "price": 8.99,
-      "description": "Crispy falafel balls wrapped in a pita with hummus, tahini, and fresh vegetables.",
-      "image": "https://example.com/images/falafel-wrap.jpg",
-      "category": "Middle Eastern"
+      "title": "Cartier Santos",
+      "price": 45000,
+      "description": "Discover timeless elegance with the Cartier Santos Men's Watch. This iconic timepiece combines classic design with modern sophistication, featuring a distinctive square case and Roman numeral dial. Perfect for any occasion, the Cartier Santos adds a touch of luxury to your everyday style.",
+      "image": "https://purepng.com/public/uploads/large/purepng.com-wrist-band-watchclockbelltimealarmwristbandsilver-1421526465486kk9sm.png",
+      "category": "Dress Watch"
     },
     {
       "id": "8",
-      "title": "French Onion Soup",
-      "price": 7.99,
-      "description": "A savory soup made with caramelized onions, beef broth, and topped with melted cheese.",
-      "image": "https://example.com/images/french-onion-soup.jpg",
-      "category": "French"
+      "title": "Audemars Piguet Royal Oak",
+      "price": 98000,
+      "description": "Experience the pinnacle of horological mastery with the Audemars Piguet Royal Oak Men's Watch. Recognized for its innovative design and superior craftsmanship, this watch features the iconic octagonal bezel and 'Tapisserie' dial. Elevate your collection with this prestigious timepiece.",
+      "image": "https://purepng.com/public/uploads/large/purepng.com-wrist-band-watchclockbelltimealarmwristbandsilver-1421526465486kk9sm.png",
+      "category": "High-End Watches"
     },
     {
       "id": "9",
-      "title": "Margherita Pizza",
-      "price": 13.99,
-      "description": "Classic pizza topped with fresh tomatoes, mozzarella cheese, and basil.",
-      "image": "https://example.com/images/margherita-pizza.jpg",
-      "category": "Italian"
+      "title": "IWC Portugieser",
+      "price": 32000,
+      "description": "Embrace classic elegance with the IWC Portugieser Automatic Men's Watch. Known for its clean design and precision engineering, this timepiece features a sleek stainless steel case and a beautifully detailed dial. Ideal for the modern gentleman, the IWC Portugieser is a symbol of refined taste.",
+      "image": "https://purepng.com/public/uploads/large/purepng.com-wrist-band-watchclockbelltimealarmwristbandsilver-1421526465486kk9sm.png",
+      "category": "Elegant Watches"
     },
     {
       "id": "10",
-      "title": "Vegetable Stir Fry",
-      "price": 9.99,
-      "description": "A mix of fresh vegetables stir-fried with soy sauce and served over rice.",
-      "image": "https://example.com/images/vegetable-stir-fry.jpg",
-      "category": "Chinese"
+      "title": "Panerai Luminor",
+      "price": 27500,
+      "description": "Dive into adventure with the Panerai Luminor Marina Men's Watch. Renowned for its robust design and exceptional luminosity, this watch is perfect for underwater exploration and everyday wear. The distinctive crown-protecting bridge and minimalist dial ensure both functionality and style.",
+      "image": "https://purepng.com/public/uploads/large/purepng.com-wrist-band-watchclockbelltimealarmwristbandsilver-1421526465486kk9sm.png",
+      "category": "Adventure Watches"
     },
     {
       "id": "11",
-      "title": "Butter Chicken",
-      "price": 16.99,
-      "description": "Tender chicken cooked in a rich, creamy tomato gravy.",
-      "image": "https://example.com/images/butter-chicken.jpg",
-      "category": "Indian"
-    },
-    {
-      "id": "12",
-      "title": "Rogan Josh",
-      "price": 17.99,
-      "description": "A flavorful lamb curry with a blend of spices and a tomato-based sauce.",
-      "image": "https://example.com/images/rogan-josh.jpg",
-      "category": "Indian"
-    },
-    {
-      "id": "13",
-      "title": "Tempura",
-      "price": 14.99,
-      "description": "Lightly battered and deep-fried seafood and vegetables.",
-      "image": "https://example.com/images/tempura.jpg",
-      "category": "Japanese"
-    },
-    {
-      "id": "14",
-      "title": "Ramen",
-      "price": 12.99,
-      "description": "A hearty Japanese noodle soup with meat, vegetables, and broth.",
-      "image": "https://example.com/images/ramen.jpg",
-      "category": "Japanese"
-    },
-    {
-      "id": "147",
-      "title": "test1111",
-      "price": "7878",
-      "category": "Mexican",
-      "descrition": "test"
-    },
-    {
-      "id": "121212",
-      "title": "Test ",
-      "price": "121",
-      "category": "Mexican",
-      "description": "test descittion"
+      "title": "Hublot Big Bang",
+      "price": 59000,
+      "description": "Unleash your bold side with the Hublot Big Bang Chronograph Men's Watch. This striking timepiece is known for its avant-garde design and high-performance functionality. Featuring a robust case and dynamic dial, the Hublot Big Bang is perfect for those who live life to the fullest.",
+      "image": "https://purepng.com/public/uploads/large/purepng.com-wrist-band-watchclockbelltimealarmwristbandsilver-1421526465486kk9sm.png",
+      "category": "Chronograph Watches"
     }
   ],
   "categories": [
@@ -138,6 +100,10 @@
     },
     {
       "title": "Smart Watch",
+      "id": "5680"
+    },
+    {
+      "title": "Mens Watch",
       "id": "5680"
     }
   ]

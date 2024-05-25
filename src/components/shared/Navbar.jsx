@@ -1,5 +1,6 @@
 import { useSignOut } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase/firebase.config";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [signOut, loading] = useSignOut(auth);
@@ -32,46 +33,28 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Item 1</a>
+              <Link to="">Shop</Link>
             </li>
             <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
+              <Link to="dashboard">Dashboard</Link>
             </li>
             <li>
-              <a>Item 3</a>
+              <Link to="">About</Link>
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <a className="btn btn-ghost text-xl">Watch Universe</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>Item 1</a>
+            <Link to="">Shop</Link>
           </li>
           <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </details>
+            <Link to="dashboard">Dashboard</Link>
           </li>
           <li>
-            <a>Item 3</a>
+            <Link to="">About</Link>
           </li>
         </ul>
       </div>
