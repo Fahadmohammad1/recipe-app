@@ -7,13 +7,13 @@ const Products = () => {
   const [watches, setWatches] = useState([]);
 
   useEffect(() => {
-    async function load() {
+    async function loadData() {
       const data = await axios.get("http://localhost:3000/watches");
       if (data?.status === 200) {
         setWatches(data?.data);
       }
     }
-    load();
+    loadData();
   }, []);
 
   return (

@@ -11,7 +11,7 @@ const SingleProduct = ({ watch }) => {
         <h2 className="card-title">{title}</h2>
         <p>{description.slice(0, 100)}</p>
         <div className="card-actions w-full flex justify-between items-center">
-          <p className="font-bold text-lg text-red-500">{price}</p>
+          <p className="font-bold text-lg text-red-500">${price}</p>
           <button className="btn btn-sm rounded-full">Buy Now</button>
         </div>
       </div>
