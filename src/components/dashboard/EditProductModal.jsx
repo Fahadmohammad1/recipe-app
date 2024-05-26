@@ -1,14 +1,54 @@
+import axios from "axios";
+import Swal from "sweetalert2";
+
 /* eslint-disable react/prop-types */
 const EditProductModal = ({ watch }) => {
-  console.log(watch);
+  const handleUpdateProduct = async (e) => {
+    e.preventDefault();
 
-  const handleUpdateProduct = async () => {};
+    const form = e.target;
+    const id = watch?.id;
+    const title = form?.title?.value;
+    const price = form.price?.value;
+    const description = form?.description?.value;
+    const image = form?.image?.value;
+    const category = form?.category?.value;
+
+    const productData = {
+      id,
+      title,
+      price,
+      description,
+      image,
+      category,
+    };
+
+    const data = await axios.patch(
+      `http://localhost:3000/watches/${watch.id}`,
+      productData
+    );
+
+    if (data?.status === 200) {
+      document.getElementById("my_modal_3").close();
+
+      Swal.fire({
+        title: "Updated!",
+        text: "product updated successfully.",
+        icon: "success",
+      });
+    } else {
+      Swal.fire({
+        title: "Failed!",
+        text: "failed to update product.",
+        icon: "error",
+      });
+    }
+  };
   return (
     <div>
       <dialog id="my_modal_3" className="modal">
         <div className="modal-box">
           <form method="dialog">
-            {/* if there is a button in form, it will close the modal */}
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
               ✕
             </button>
@@ -33,6 +73,7 @@ const EditProductModal = ({ watch }) => {
                     type="text"
                     name="title"
                     id="title"
+                    defaultValue={watch?.title}
                     autoComplete="given-name"
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm shadow-blue-500 ring-1 ring-inset ring-blue-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6"
                   />
@@ -50,6 +91,7 @@ const EditProductModal = ({ watch }) => {
                     type="number"
                     name="price"
                     id="price"
+                    defaultValue={watch?.price}
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset shadow-blue-500 ring-blue-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6"
                   />
                 </div>
@@ -66,6 +108,7 @@ const EditProductModal = ({ watch }) => {
                     type="text"
                     name="image"
                     id="image"
+                    defaultValue={watch?.image}
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset shadow-blue-500 ring-blue-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6"
                   />
                 </div>
@@ -82,6 +125,7 @@ const EditProductModal = ({ watch }) => {
                     type="text"
                     name="category"
                     id="category"
+                    defaultValue={watch?.category}
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset shadow-blue-500 ring-blue-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6"
                   />
                 </div>
@@ -98,6 +142,7 @@ const EditProductModal = ({ watch }) => {
                   <textarea
                     name="description"
                     id="description"
+                    defaultValue={watch?.description}
                     rows="4"
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   ></textarea>
@@ -109,7 +154,7 @@ const EditProductModal = ({ watch }) => {
                 type="submit"
                 className="block w-full rounded-md bg-cyan-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                ADD
+                UPDATE
               </button>
             </div>
           </form>
