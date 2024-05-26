@@ -67,7 +67,6 @@ const AllProducts = () => {
           </tr>
         </thead>
         <tbody>
-          {/* row 1 */}
           {watches?.map((watch) => (
             <tr key={watch.id}>
               <td>
@@ -87,7 +86,7 @@ const AllProducts = () => {
               <td>
                 <button
                   onClick={() => handleUpdate(watch)}
-                  className="btn btn-ghost btn-xs bg-orange-200 lg:mr-2"
+                  className="btn btn-ghost btn-xs bg-orange-200 lg:mr-2 mb-2 lg:mb-0"
                 >
                   update
                 </button>

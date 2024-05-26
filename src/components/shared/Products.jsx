@@ -18,7 +18,7 @@ const Products = () => {
 
   return (
     <section className="container mx-auto">
-      <div className="grid grid-cols-3 gap-10">
+      <div className="lg:grid grid-cols-3 gap-10">
         {watches?.slice(0, 6).map((watch) => (
           <SingleProduct key={watch.id} watch={watch} />
         ))}
