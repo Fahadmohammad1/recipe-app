@@ -87,24 +87,48 @@
       "description": "Unleash your bold side with the Hublot Big Bang Chronograph Men's Watch. This striking timepiece is known for its avant-garde design and high-performance functionality. Featuring a robust case and dynamic dial, the Hublot Big Bang is perfect for those who live life to the fullest.",
       "image": "https://purepng.com/public/uploads/large/purepng.com-wrist-band-watchclockbelltimealarmwristbandsilver-1421526465486kk9sm.png",
       "category": "Chronograph Watches"
+    },
+    {
+      "id": "12",
+      "title": "adfs",
+      "price": "3",
+      "description": "sdfadsf",
+      "image": "sdfsadf",
+      "category": "sdfasdf"
+    },
+    {
+      "id": "13",
+      "title": "fasdf",
+      "price": "6",
+      "description": "fdasfdf",
+      "image": "asdfadf",
+      "category": "adfdf"
+    },
+    {
+      "id": "14",
+      "title": "fasdf",
+      "price": "6",
+      "description": "fdasfdf",
+      "image": "asdfadf",
+      "category": "adfdf"
     }
   ],
   "categories": [
     {
       "title": "Analog",
-      "id": "2314"
+      "id": "1"
     },
     {
       "title": "Digital",
-      "id": "8569"
+      "id": "2"
     },
     {
       "title": "Smart Watch",
-      "id": "5680"
+      "id": "3"
     },
     {
       "title": "Mens Watch",
-      "id": "5680"
+      "id": "4"
     }
   ]
 }
