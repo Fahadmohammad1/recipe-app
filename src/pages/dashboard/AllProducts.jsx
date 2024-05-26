@@ -2,9 +2,11 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import EditProductModal from "../../components/dashboard/EditProductModal";
 
 const AllProducts = () => {
   const [watches, setWatches] = useState([]);
+  const [selectedWatch, setSelectedWatch] = useState(null);
 
   useEffect(() => {
     async function loadData() {
@@ -16,6 +18,12 @@ const AllProducts = () => {
     loadData();
   }, []);
 
+  const handleUpdate = (id) => {
+    setSelectedWatch(id);
+    document.getElementById("my_modal_3").showModal();
+  };
+
+  // delete
   const handleDelete = async (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -45,6 +53,7 @@ const AllProducts = () => {
       }
     });
   };
+
   return (
     <div className="overflow-x-auto">
       <table className="table">
@@ -76,7 +85,10 @@ const AllProducts = () => {
               <td>{watch.price}</td>
               <td>{watch.category}</td>
               <td>
-                <button className="btn btn-ghost btn-xs bg-orange-200 lg:mr-2">
+                <button
+                  onClick={() => handleUpdate(watch)}
+                  className="btn btn-ghost btn-xs bg-orange-200 lg:mr-2"
+                >
                   update
                 </button>
                 <button
@@ -90,6 +102,7 @@ const AllProducts = () => {
           ))}
         </tbody>
       </table>
+      <EditProductModal watch={selectedWatch} />
     </div>
   );
 };
