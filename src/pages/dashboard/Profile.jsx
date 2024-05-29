@@ -2,8 +2,13 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase/firebase.config";
 
 const Profile = () => {
-  const [user] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
+  const { displayName, email, emailVerified, photoURL } = user;
+  console.log(displayName, email, photoURL);
 
+  if (loading) {
+    return <p>Loading...</p>;
+  }
   return (
     <section>
       <div className="max-w-lg mr-auto bg-white shadow-md rounded-2xl">
@@ -15,36 +20,37 @@ const Profile = () => {
           <div className="absolute -bottom-12 flex h-[120px] w-[120px] rounded-full border-[6px] border-white bg-pink-400 dark:!border-navy-700">
             <img
               className="h-full w-full rounded-full"
-              src="https://scontent.fbkk28-1.fna.fbcdn.net/v/t1.6435-9/125535972_3750420548325142_7905604705856418885_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=7a1959&_nc_eui2=AeGeSAyGVIFEBvX_Rb_q553kkN_mJZ0fv8CQ3-YlnR-_wAqhLdiMV8ojwQw16EwFrNCvXNl762z6mGjn9Xl8PRZu&_nc_ohc=j276XODuByEAX_pcgRV&_nc_ht=scontent.fbkk28-1.fna&oh=00_AfDlPBtaC3DqYkvhd5iAYjq-D1B5WOdcX-VJchhSA8SG5g&oe=65D1E4B6"
+              src={
+                photoURL
+                  ? photoURL
+                  : "https://cdn-icons-png.flaticon.com/512/3237/3237472.png"
+              }
               alt=""
             />
           </div>
         </div>
 
-        <p className="text-3xl font-bold text-center mt-14">
-          Vorakit Nontiboot
+        <p className="text-3xl font-bold text-center mt-14 text-custom-third">
+          {displayName ? displayName : "Not Set"}
         </p>
+        <p className="text-center font-light">{email ? email : "Not Found"}</p>
         <p className="text-center font-light">
-          Art Director | Creative & Art Direction
+          Email Verification : {emailVerified ? "Verified" : "Not Verified"}
         </p>
 
-        <div className="mx-auto flex flex-wrap justify-center gap-2 mt-6">
+        <div className="mx-auto flex flex-wrap justify-center gap-2 mt-6 pb-8">
           <button className="font-semibold text-black">
             <svg
               className="w-8 h-8 fill-current"
               role="img"
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns="/"
               viewBox="0 0 24 24"
             >
               <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
             </svg>
           </button>
           <button className="font-semibold text-black ">
-            <svg
-              className="w-8 h-8 fill-current"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 88 88"
-            >
+            <svg className="w-8 h-8 fill-current" xmlns="/" viewBox="0 0 88 88">
               <path
                 className="cls-1"
                 d="M26,0C11.66,0,0,11.66,0,26v36c0,14.34,11.66,26,26,26h36c14.34,0,26-11.66,26-26V26c0-14.34-11.66-26-26-26H26ZM26,4h36c12.17,0,22,9.83,22,22v36c0,12.17-9.83,22-22,22H26c-12.17,0-22-9.83-22-22V26C4,13.83,13.83,4,26,4ZM68,16c-2.21,0-4,1.79-4,4s1.79,4,4,4,4-1.79,4-4-1.79-4-4-4ZM44,22c-12.13,0-22,9.87-22,22s9.87,22,22,22,22-9.87,22-22-9.87-22-22-22ZM44,26c9.96,0,18,8.04,18,18s-8.04,18-18,18-18-8.04-18-18,8.04-18,18-18Z"
@@ -55,7 +61,7 @@ const Profile = () => {
             <svg
               className="w-8 h-8 fill-current"
               role="img"
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns="/"
               viewBox="0 0 24 24"
             >
               <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
@@ -64,7 +70,7 @@ const Profile = () => {
           <button className="font-semibold text-black">
             <svg
               className="w-8 h-8 fill-current"
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns="/"
               viewBox="0 0 124.27 143.91"
             >
               <path
@@ -73,163 +79,6 @@ const Profile = () => {
               />
             </svg>
           </button>
-        </div>
-
-        <p className="text-l font-bold mt-10 text-center uppercase">
-          {" "}
-          Social Media
-        </p>
-
-        <div className="m-5">
-          <a href="http://facebook.com/ctrljames">
-            <div className="my-2 flex h-12 items-center justify-center rounded-full px-4 bg-green-400">
-              <div className="flex items-center">
-                <img
-                  alt="photo"
-                  className="w-12 rounded-full"
-                  src="https://icon-library.com/images/2018/2298785_oreos-oreo-cookie-adult-costume-hd-png-download.png"
-                />
-
-                <div className="ml-2">
-                  <div className="">Facebook</div>
-
-                  <div className="flex text-xs font-light text-gray-600">
-                    yourpal.com
-                    <svg
-                      className="h-3 w-3"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
-                      <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://www.instagram.com/ctrljames/">
-            <div className="my-2 flex h-12 items-center justify-center rounded-full px-4 bg-green-400">
-              <div className="flex items-center">
-                <img
-                  alt="photo"
-                  className="w-12 rounded-full"
-                  src="https://icon-library.com/images/2018/2298785_oreos-oreo-cookie-adult-costume-hd-png-download.png"
-                />
-
-                <div className="ml-2 ">
-                  <div className="">Instagram</div>
-
-                  <div className="flex text-xs font-light text-gray-600">
-                    yourpal.com
-                    <svg
-                      className="h-3 w-3"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
-                      <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://www.tiktok.com/@ctrljames">
-            <div className="my-2 flex h-12 items-center justify-center rounded-full px-4 bg-green-400">
-              <div className="flex items-center">
-                <img
-                  alt="photo"
-                  className="w-12 rounded-full"
-                  src="https://icon-library.com/images/2018/2298785_oreos-oreo-cookie-adult-costume-hd-png-download.png"
-                />
-
-                <div className="ml-2 ">
-                  <div className="">TikTok</div>
-
-                  <div className="flex text-xs font-light text-gray-600">
-                    yourpal.com
-                    <svg
-                      className="h-3 w-3"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
-                      <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <p className="text-l font-bold mt-10 text-center uppercase">
-            Portfolio
-          </p>
-          <a href="https://www.behance.net/ctrljames">
-            <div className="my-2 flex h-12 items-center justify-center rounded-full px-4 bg-green-400">
-              <div className="flex items-center">
-                <img
-                  alt="photo"
-                  className="w-12 rounded-full"
-                  src="https://icon-library.com/images/2018/2298785_oreos-oreo-cookie-adult-costume-hd-png-download.png"
-                />
-
-                <div className="ml-2 ">
-                  <div className="">Behance</div>
-
-                  <div className="flex text-xs font-light text-gray-600">
-                    yourpal.com
-                    <svg
-                      className="h-3 w-3"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
-                      <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <p className="text-l font-bold mt-10 text-center uppercase">
-            Contact Us
-          </p>
-          <a href="https://www.instagram.com/ctrljames/">
-            <div className="my-2 flex h-12 items-center justify-center rounded-full px-4 bg-green-400">
-              <div className="flex items-center">
-                <img
-                  alt="photo"
-                  className="w-12 rounded-full"
-                  src="https://icon-library.com/images/2018/2298785_oreos-oreo-cookie-adult-costume-hd-png-download.png"
-                />
-
-                <div className="ml-2 ">
-                  <div className="">Contact Us</div>
-
-                  <div className="flex text-xs font-light text-gray-600">
-                    yourpal.com
-                    <svg
-                      className="h-3 w-3"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
-                      <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
         </div>
       </div>
     </section>

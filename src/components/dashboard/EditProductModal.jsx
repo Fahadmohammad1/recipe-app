@@ -53,7 +53,7 @@ const EditProductModal = ({ watch }) => {
               ✕
             </button>
           </form>
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-custom-third sm:text-4xl text-center">
             Update Product
           </h2>
           <form
@@ -75,7 +75,7 @@ const EditProductModal = ({ watch }) => {
                     id="title"
                     defaultValue={watch?.title}
                     autoComplete="given-name"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm shadow-blue-500 ring-1 ring-inset ring-blue-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm shadow-custom-extra ring-1 ring-inset ring-custom-primary placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -92,7 +92,7 @@ const EditProductModal = ({ watch }) => {
                     name="price"
                     id="price"
                     defaultValue={watch?.price}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset shadow-blue-500 ring-blue-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset shadow-custom-extra ring-custom-primary placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -109,7 +109,7 @@ const EditProductModal = ({ watch }) => {
                     name="image"
                     id="image"
                     defaultValue={watch?.image}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset shadow-blue-500 ring-blue-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset shadow-custom-extra ring-custom-third placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -126,7 +126,7 @@ const EditProductModal = ({ watch }) => {
                     name="category"
                     id="category"
                     defaultValue={watch?.category}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset shadow-blue-500 ring-blue-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset shadow-custom-extra ring-custom-third placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -152,7 +152,7 @@ const EditProductModal = ({ watch }) => {
             <div className="mt-10">
               <button
                 type="submit"
-                className="block w-full rounded-md bg-cyan-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="block w-full rounded-md bg-custom-secondary px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm btn-ghost hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 UPDATE
               </button>

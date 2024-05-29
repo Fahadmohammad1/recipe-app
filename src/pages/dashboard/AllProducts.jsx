@@ -76,7 +76,7 @@ const AllProducts = () => {
               <td>
                 <button
                   onClick={() => handleUpdate(watch)}
-                  className="btn btn-ghost btn-xs bg-orange-200 lg:mr-2 mb-2 lg:mb-0"
+                  className="btn btn-ghost btn-xs bg-custom-primary lg:mr-2 mb-2 lg:mb-0"
                 >
                   update
                 </button>
