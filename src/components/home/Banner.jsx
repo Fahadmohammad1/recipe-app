@@ -13,7 +13,9 @@ const Banner = () => {
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <button className="btn btn-primary">Explore</button>
+          <button className="btn bg-custom-primary text-black rounded-full">
+            Explore
+          </button>
         </div>
       </div>
     </div>

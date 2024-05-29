@@ -1,11 +1,14 @@
-import { useSignOut } from "react-firebase-hooks/auth";
+import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase/firebase.config";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const [signOut, loading] = useSignOut(auth);
+  const [user, uLoading] = useAuthState(auth);
+  const navigate = useNavigate();
 
-  if (loading) {
+  if (loading || uLoading) {
     return <p>Loading...</p>;
   }
   return (
@@ -49,7 +52,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost text-xl">
+        <Link to="/" className="btn btn-ghost text-xl text-custom-primary">
           Watch Universe
         </Link>
       </div>
@@ -73,17 +76,30 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <button
-          onClick={async () => {
-            const success = await signOut();
-            if (success) {
-              alert("You are sign out");
-            }
-          }}
-          className="btn"
-        >
-          Logout
-        </button>
+        {user ? (
+          <button
+            onClick={async () => {
+              const success = await signOut();
+              if (success) {
+                Swal.fire({
+                  title: "Logout Successfull!",
+                  text: "You are logged out.",
+                  icon: "success",
+                });
+              }
+            }}
+            className="btn bg-custom-secondary text-white btn-sm rounded-full"
+          >
+            Logout
+          </button>
+        ) : (
+          <button
+            onClick={() => navigate("/login")}
+            className="btn bg-custom-secondary text-white btn-sm rounded-full"
+          >
+            Login
+          </button>
+        )}
       </div>
     </div>
   );

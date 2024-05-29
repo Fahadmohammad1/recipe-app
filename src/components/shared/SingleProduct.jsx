@@ -6,7 +6,7 @@ const SingleProduct = ({ watch }) => {
   const navigate = useNavigate();
   return (
     <div className="card bg-base-100 shadow-xl">
-      <div className="badge badge-accent">{category}</div>
+      <div className="badge badge-accent bg-custom-extra">{category}</div>
       <figure className="px-10 pt-10">
         <img src={image} alt="watch" className="rounded-xl lg:w-3/5" />
       </figure>
@@ -17,10 +17,20 @@ const SingleProduct = ({ watch }) => {
         >
           {title}
         </h2>
-        <p>{description.slice(0, 100)}</p>
+        <p>{description.slice(0, 100)}...</p>
         <div className="card-actions w-full flex justify-between items-center">
-          <p className="font-bold text-lg text-red-500">${price}</p>
-          <button className="btn btn-sm rounded-full">Buy Now</button>
+          <p
+            className="font-bold text-lg text-custom-third
+          "
+          >
+            ${price}
+          </p>
+          <button
+            onClick={() => navigate(`product/${id}`)}
+            className="btn btn-sm rounded-full bg-custom-secondary text-white hover:text-black"
+          >
+            Buy Now
+          </button>
         </div>
       </div>
     </div>
