@@ -1,22 +1,12 @@
 import axios from "axios";
-import { useEffect } from "react";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import EditProductModal from "../../components/dashboard/EditProductModal";
+import useFetchData from "../../hooks/useFetchData";
 
 const AllProducts = () => {
-  const [watches, setWatches] = useState([]);
   const [selectedWatch, setSelectedWatch] = useState(null);
-
-  useEffect(() => {
-    async function loadData() {
-      const data = await axios.get("http://localhost:3000/watches");
-      if (data?.status === 200) {
-        setWatches(data?.data);
-      }
-    }
-    loadData();
-  }, []);
+  const watches = useFetchData();
 
   const handleUpdate = (id) => {
     setSelectedWatch(id);
